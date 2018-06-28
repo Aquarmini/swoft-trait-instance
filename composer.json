@@ -1,0 +1,29 @@
+{
+    "name": "limingxinleo/x-trait-common",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "李铭昕",
+            "email": "715557344@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Xin\\Swoft\\Traits\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=7.0",
+        "swoft/framework": "^1.0"
+    },
+    "require-dev": {
+        "swoft/swoole-ide-helper": "dev-master",
+        "phpunit/phpunit": "^5.7"
+    }
+}
