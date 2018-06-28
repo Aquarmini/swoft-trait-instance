@@ -39,6 +39,11 @@ class BaseTest extends TestCase
         go(function () {
             $incr = Incr::instance('co');
             $this->assertEquals(1, $incr->incr());
+
+            $incr = Incr::instance('co');
+            $this->assertEquals(2, $incr->incr());
         });
+        $incr = Incr::instance('co');
+        $this->assertEquals(3, $incr->incr());
     }
 }
