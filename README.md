@@ -1,27 +1,32 @@
-# x-trait-common
-常用Trait集合
+# swoft-trait-instance
+基于Swoft的协程单例扩展
 
-[![Build Status](https://travis-ci.org/limingxinleo/x-trait-common.svg?branch=master)](https://travis-ci.org/limingxinleo/x-trait-common)
+[![Build Status](https://travis-ci.org/limingxinleo/swoft-trait-instance.svg?branch=master)](https://travis-ci.org/limingxinleo/swoft-trait-instance)
 
 ## 单例模式Trait
 ~~~php
 <?php
-use Xin\Traits\Common\InstanceTrait;
+use Xin\Swoft\Traits\InstanceTrait;
 
-class Ins1
+class Incr
 {
     use InstanceTrait;
 
-    public function str()
+    public $incr = 0;
+
+    public function incr()
     {
-        return 'Ins1';
+        return ++$this->incr;
     }
 
-    public function instance()
+    public function get()
     {
-        return static::$_instance;
+        return $this->incr;
     }
 }
 
-echo Ins1::getInstance()->str();
+echo Incr::getInstance()->incr(); // 1
+go(function(){
+    echo Incr::getInstance()->incr(); // 1
+});
 ~~~

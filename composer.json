@@ -1,7 +1,14 @@
 {
-    "name": "limingxinleo/x-trait-common",
+    "name": "limingxinleo/swoft-trait-instance",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "php",
+        "swoole",
+        "swoft",
+        "instance"
+    ],
+    "description": "基于Swoft的协程单例扩展",
     "authors": [
         {
             "name": "李铭昕",
