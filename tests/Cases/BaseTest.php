@@ -97,4 +97,15 @@ class BaseTest extends TestCase
         $incr = Incr2::instance('child');
         $this->assertEquals(3, $incr->incr());
     }
+
+    public function testInstanceKey()
+    {
+        $incr = Incr::instance('child');
+        $this->assertEquals('child', $incr->getInstanceKey());
+
+        go(function () {
+            $incr = Incr::instance('child2');
+            $this->assertEquals('child2', $incr->getInstanceKey());
+        });
+    }
 }
